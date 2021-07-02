@@ -1,6 +1,6 @@
 {
   "name": "sniptt-sdk-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Sniptt SDK for JavaScript",
   "main": "./dist/index.js",
   "keywords": [
