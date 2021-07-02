@@ -1,0 +1,7 @@
+snapshot: false
+paramNaming: "original"
+modelPropertyNaming: "original"
+useSingleRequestParameter: false
+supportsES6: false
+typescriptThreePlus: true
+generateAliasAsModel: true

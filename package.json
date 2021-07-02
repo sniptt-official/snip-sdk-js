@@ -1,0 +1,33 @@
+{
+  "name": "sniptt-sdk-js",
+  "version": "0.0.0",
+  "description": "Sniptt SDK for JavaScript",
+  "main": "./dist/index.js",
+  "keywords": [
+    "api",
+    "sdk",
+    "encryption",
+    "openpgp",
+    "end-to-end-encryption",
+    "secrets-management",
+    "vault",
+    "secrets",
+    "sharing-secrets"
+  ],
+  "author": "sniptt.com <support@sniptt.com> (https://github.com/sniptt-official)",
+  "homepage": "https://github.com/sniptt-official/snip-sdk-js",
+  "bugs": "https://github.com/sniptt-official/snip-sdk-js/issues",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.11.5",
+    "js-yaml": "4.1.0",
+    "typescript": "^3.6.4"
+  }
+}
