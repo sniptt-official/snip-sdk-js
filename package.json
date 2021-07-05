@@ -1,5 +1,5 @@
 {
-  "name": "@sniptt-official/snip-sdk-js",
+  "name": "@sniptt/snip-sdk-js",
   "version": "0.0.3",
   "description": "Sniptt SDK for JavaScript",
   "main": "./dist/index.js",
