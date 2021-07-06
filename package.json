@@ -23,11 +23,13 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "cross-fetch": "3.1.4",
+    "es6-promise": "4.2.8",
+    "isomorphic-fetch": "3.0.0"
   },
   "devDependencies": {
+    "@types/isomorphic-fetch": "0.0.35",
     "@types/node": "^12.11.5",
-    "js-yaml": "4.1.0",
     "typescript": "^3.6.4"
   }
 }
