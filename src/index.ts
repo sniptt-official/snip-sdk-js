@@ -7,7 +7,7 @@ import { Configuration, FetchAPI, SnipttApi } from "./generated";
  */
 type SnipttOpts = {
   // Obtain an apiKey using the [`snip-cli`](https://github.com/sniptt-official/snip-cli).
-  apiKey: string;
+  apiKey?: string;
   // Optional API base path.
   basePath?: string;
   // Optional fetch override.
