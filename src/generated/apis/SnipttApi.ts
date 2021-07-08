@@ -904,7 +904,7 @@ export class SnipttApi extends runtime.BaseAPI {
     /**
      * Send email verification code
      */
-    async sendEmailVerificationCodeRaw(requestParameters: SendEmailVerificationCodeOperationRequest): Promise<runtime.ApiResponse<object>> {
+    async sendEmailVerificationCodeRaw(requestParameters: SendEmailVerificationCodeOperationRequest): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.sendEmailVerificationCodeRequest === null || requestParameters.sendEmailVerificationCodeRequest === undefined) {
             throw new runtime.RequiredError('sendEmailVerificationCodeRequest','Required parameter requestParameters.sendEmailVerificationCodeRequest was null or undefined when calling sendEmailVerificationCode.');
         }
@@ -927,15 +927,14 @@ export class SnipttApi extends runtime.BaseAPI {
             body: SendEmailVerificationCodeRequestToJSON(requestParameters.sendEmailVerificationCodeRequest),
         });
 
-        return new runtime.JSONApiResponse<any>(response);
+        return new runtime.VoidApiResponse(response);
     }
 
     /**
      * Send email verification code
      */
-    async sendEmailVerificationCode(sendEmailVerificationCodeRequest: SendEmailVerificationCodeRequest): Promise<object> {
-        const response = await this.sendEmailVerificationCodeRaw({ sendEmailVerificationCodeRequest: sendEmailVerificationCodeRequest });
-        return await response.value();
+    async sendEmailVerificationCode(sendEmailVerificationCodeRequest: SendEmailVerificationCodeRequest): Promise<void> {
+        await this.sendEmailVerificationCodeRaw({ sendEmailVerificationCodeRequest: sendEmailVerificationCodeRequest });
     }
 
     /**
