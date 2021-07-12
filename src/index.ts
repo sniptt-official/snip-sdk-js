@@ -1,6 +1,13 @@
 import "isomorphic-fetch";
 
-import { Configuration, FetchAPI, SnipttApi } from "./generated";
+import {
+  AccountsApi,
+  Configuration,
+  FetchAPI,
+  OneTimeSecretsApi,
+  SecretsApi,
+  VaultsApi,
+} from "./generated";
 
 /**
  * Sniptt options.
@@ -14,7 +21,12 @@ type SnipttOpts = {
   fetchApi?: FetchAPI;
 };
 
-class Sniptt extends SnipttApi {
+class Sniptt {
+  public readonly accounts: AccountsApi;
+  public readonly vaults: VaultsApi;
+  public readonly secrets: SecretsApi;
+  public readonly oneTimeSecrets: OneTimeSecretsApi;
+
   /**
    * Create a new Sniptt instance.
    *
@@ -27,13 +39,20 @@ class Sniptt extends SnipttApi {
    * @param opts
    */
   constructor(opts: SnipttOpts) {
-    super(
-      new Configuration({
-        apiKey: opts.apiKey,
-        basePath: opts.basePath || "https://api.sniptt.com",
-        fetchApi: opts.fetchApi || fetch,
-      })
-    );
+    const _fetch: any = opts.fetchApi || fetch;
+
+    const clientConfiguration = new Configuration({
+      apiKey: opts.apiKey,
+      basePath: opts.basePath || "https://api.sniptt.com",
+      fetchApi: opts.fetchApi || fetch,
+    });
+
+    const args = [clientConfiguration, clientConfiguration.basePath, _fetch];
+
+    this.accounts = new AccountsApi(...args);
+    this.secrets = new SecretsApi(...args);
+    this.oneTimeSecrets = new OneTimeSecretsApi(...args);
+    this.vaults = new VaultsApi(...args);
   }
 }
 

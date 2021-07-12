@@ -12,32 +12,25 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import {
-    VaultMembership,
-    VaultMembershipFromJSON,
-    VaultMembershipFromJSONTyped,
-    VaultMembershipToJSON,
-} from './';
-
 /**
  * 
  * @export
- * @interface SearchVaultMembershipsResponse
+ * @enum {string}
  */
-export interface SearchVaultMembershipsResponse extends Array<VaultMembership> {
+export enum Role {
+    Read = 'Read',
+    Admin = 'Admin'
 }
 
-export function SearchVaultMembershipsResponseFromJSON(json: any): SearchVaultMembershipsResponse {
-    return SearchVaultMembershipsResponseFromJSONTyped(json, false);
+export function RoleFromJSON(json: any): Role {
+    return RoleFromJSONTyped(json, false);
 }
 
-export function SearchVaultMembershipsResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): SearchVaultMembershipsResponse {
-    return json;
+export function RoleFromJSONTyped(json: any, ignoreDiscriminator: boolean): Role {
+    return json as Role;
 }
 
-export function SearchVaultMembershipsResponseToJSON(value?: SearchVaultMembershipsResponse | null): any {
-    return value;
+export function RoleToJSON(value?: Role | null): any {
+    return value as any;
 }
-
 
