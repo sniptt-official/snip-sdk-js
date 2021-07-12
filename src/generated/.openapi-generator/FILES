@@ -1,4 +1,7 @@
-apis/SnipttApi.ts
+apis/AccountsApi.ts
+apis/OneTimeSecretsApi.ts
+apis/SecretsApi.ts
+apis/VaultsApi.ts
 apis/index.ts
 index.ts
 models/AddMemberToVaultRequest.ts
@@ -6,6 +9,7 @@ models/AddSecretRequest.ts
 models/AddSecretResponse.ts
 models/ConfigureAccountRequest.ts
 models/ConfigureAccountResponse.ts
+models/ContentType.ts
 models/CreateOneTimeSecretRequest.ts
 models/CreateOneTimeSecretResponse.ts
 models/CreateVaultRequest.ts
@@ -28,6 +32,7 @@ models/RetrieveSecretRequest.ts
 models/RetrieveSecretResponse.ts
 models/RetrieveVaultKeysRequest.ts
 models/RetrieveVaultKeysResponse.ts
+models/Role.ts
 models/SearchVaultMembershipsRequest.ts
 models/SearchVaultMembershipsResponse.ts
 models/SendEmailVerificationCodeRequest.ts
